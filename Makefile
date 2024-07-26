@@ -18,7 +18,8 @@ sync:
 # This is for syncing current code to CIRCUITPY drive on macOS.
 sync_s3: bundle
 	xattr -cr code-metro-s3.py
-	rsync -rcvO code-metro-s3.py /Volumes/CIRCUITPY/code.py
+	cp code-metro-s3.py 'build/esp32-s3-serial-glitch/CircuitPython 9.x/code.py'
+	rsync -rcvO 'build/esp32-s3-serial-glitch/CircuitPython 9.x/' /Volumes/CIRCUITPY
 	sync
 
 # Start serial terminal at fast baud rate with no flow control (-fn) using the
